@@ -14,7 +14,7 @@ player = FirstPersonController(
     jump_height=3
 )
 
-# Ground (single plane, no glitches)
+# Ground 
 ground = Entity(
     model='plane',
     scale=50,
@@ -49,7 +49,7 @@ class Block(Button):
                 del placed_blocks[pos_key]
             destroy(self)
 
-        # Place block on top
+        # Place block over
         if self.hovered and key == 'right mouse down':
             new_pos = self.position + mouse.normal
             pos_key = tuple(new_pos)
@@ -67,9 +67,9 @@ def input(key):
         if grid_pos not in placed_blocks:
             placed_blocks[grid_pos] = Block(position=grid_pos)
 
-    # Remove blocks on ground level (optional)
+    # Remove blocks on ground level 
     if key == 'left mouse down' and mouse.hovered_entity == ground:
-        pass  # do nothing
+        pass  # reeeellaxxx
     
 
 
@@ -78,4 +78,5 @@ def update():
 
 
 app.run()
+
 
